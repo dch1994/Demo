@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>store</display-name>
+  
+  <filter>
+    <filter-name>encoding</filter-name>
+    <filter-class>com.hxzy.store.web.filter.EncodingFilter</filter-class>
+  
+  </filter>
+  <filter-mapping>
+    <filter-name>encoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  
+  </filter-mapping>
+  
+  <filter>
+     <filter-name>priviledge</filter-name>
+     <filter-class>com.hxzy.store.web.filter.PriviledgeFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>priviledge</filter-name>
+    <url-pattern>/jsp/cart.jsp</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  <servlet>
+    <servlet-name>index</servlet-name>
+    <servlet-class>com.hxzy.store.web.servlet.IndexServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>index</servlet-name>
+    <url-pattern>/IndexServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>cart</servlet-name>
+    <servlet-class>com.hxzy.store.web.servlet.CartServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>cart</servlet-name>
+    <url-pattern>/CartServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+     <servlet-name>category</servlet-name>
+     <servlet-class>com.hxzy.store.web.servlet.CategoryServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>category</servlet-name>
+     <url-pattern>/CategoryServlet</url-pattern>
+  </servlet-mapping>
+  
+ <servlet>
+  <servlet-name>userservlet</servlet-name>
+  <servlet-class>com.hxzy.store.web.servlet.UserServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+   <servlet-name>userservlet</servlet-name>
+   <url-pattern>/UserServlet</url-pattern>
+ </servlet-mapping>
+ 
+ 
+ <servlet>
+  <servlet-name>product</servlet-name>
+  <servlet-class>com.hxzy.store.web.servlet.ProductServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+   <servlet-name>product</servlet-name>
+   <url-pattern>/ProductServlet</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  <servlet-name>order</servlet-name>
+  <servlet-class>com.hxzy.store.web.servlet.OrderServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+   <servlet-name>order</servlet-name>
+   <url-pattern>/OrderServlet</url-pattern>
+ </servlet-mapping>
+ 
+ 
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
